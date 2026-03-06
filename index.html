@@ -2,64 +2,139 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>若村柚葉 | 自己紹介</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-      background: linear-gradient(135deg, #ffdff2, #e6f0ff);
-      color: #444;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>若村柚葉 | 自己紹介</title>
 
-    .card {
-      background: white;
-      border-radius: 20px;
-      padding: 40px;
-      width: 90%;
-      max-width: 500px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      text-align: center;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  background: linear-gradient(270deg,#ffdff2,#e6f0ff,#eafff5);
+  background-size: 600% 600%;
+  animation: bgMove 12s ease infinite;
+  color:#444;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
 
-    h1 {
-      margin-top: 0;
-      font-size: 2em;
-      color: #6b7cff;
-    }
+@keyframes bgMove {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
 
-    .subtitle {
-      color: #888;
-      margin-bottom: 25px;
-    }
+.card{
+  background:white;
+  border-radius:20px;
+  padding:40px;
+  width:90%;
+  max-width:500px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  text-align:center;
+  animation:fadeUp 1s ease;
+}
 
-    .section {
-      margin: 20px 0;
-      text-align: left;
-      background: #f7f9ff;
-      padding: 15px 20px;
-      border-radius: 12px;
-    }
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
 
-    .section h2 {
-      margin-top: 0;
-      font-size: 1.1em;
-      color: #ff8ab5;
-    }
+h1{
+  margin-top:0;
+  font-size:2em;
+  color:#6b7cff;
+  animation:floatName 4s ease-in-out infinite;
+}
 
-    footer {
-      margin-top: 20px;
-      font-size: 0.8em;
-      color: #aaa;
-    }
+@keyframes floatName{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+  100%{transform:translateY(0)}
+}
 
-    .tag {
-      display: inline-block;
-      background: #ffeaf4;
-      padding: 6px 10px;
-      border-radius:
+.subtitle{
+  color:#888;
+  margin-bottom:25px;
+}
+
+.section{
+  margin:20px 0;
+  text-align:left;
+  background:#f7f9ff;
+  padding:15px 20px;
+  border-radius:12px;
+  transition:transform .25s, box-shadow .25s;
+}
+
+.section:hover{
+  transform:translateY(-5px);
+  box-shadow:0 8px 18px rgba(0,0,0,0.08);
+}
+
+.section h2{
+  margin-top:0;
+  font-size:1.1em;
+  color:#ff8ab5;
+}
+
+.tag{
+  display:inline-block;
+  background:#ffeaf4;
+  padding:6px 10px;
+  border-radius:999px;
+  margin:4px;
+  font-size:.85em;
+  animation:tagPop .6s ease forwards;
+  opacity:0;
+}
+
+.tag:nth-child(1){animation-delay:.2s}
+.tag:nth-child(2){animation-delay:.4s}
+.tag:nth-child(3){animation-delay:.6s}
+.tag:nth-child(4){animation-delay:.8s}
+
+@keyframes tagPop{
+  from{
+    opacity:0;
+    transform:scale(.7);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+footer{
+  margin-top:20px;
+  font-size:.8em;
+  color:#aaa;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>若村 柚葉</h1>
+<div class="subtitle">自己紹介ページ</div>
+
+<div class="section">
+<h2>プロフィール</h2>
+<p>こんにちは！若村柚葉です。高校生です。よろしくお願いします。</p>
+</div>
+
+<div class="section">
+<h2>好きなこと</h2>
+<span class="tag">音楽</span>
+<span class="tag">読書</
